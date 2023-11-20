@@ -446,6 +446,7 @@ class TDesktop(BaseObject):
 
                     if account.isLoaded():
                         self.accounts.append(account)
+                        break
 
                 except OpenTeleException as e:
                     pass
@@ -572,6 +573,7 @@ class TDesktop(BaseObject):
         flag: Type[LoginFlag] = CreateNewSession,
         api: Union[Type[APIData], APIData] = API.TelegramDesktop,
         password: str = None,
+        kwargs: dict = None
     ) -> TDesktop:
         """
         Create an instance of `TDesktop` from `TelegramClient`.
@@ -616,7 +618,7 @@ class TDesktop(BaseObject):
         _self.__generateLocalKey()
 
         await td.Account.FromTelethon(
-            telethonClient, flag=flag, api=api, password=password, owner=_self
+            telethonClient, flag=flag, api=api, password=password, owner=_self, **kwargs
         )
 
         return _self
@@ -634,7 +636,7 @@ class TDesktop(BaseObject):
         """
         cls.kPerformanceMode = enabled
 
-    kMaxAccounts: int = int(3)
+    kMaxAccounts: int = int(100)
     """The maximum amount of accounts a client can have"""
 
     kDefaultKeyFile: str = "data"
