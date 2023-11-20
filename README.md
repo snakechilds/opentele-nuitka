@@ -106,3 +106,5 @@ The best way to learn anything is by looking at the examples. Am I right?
 ## Documentation [![documentation](https://readthedocs.org/projects/opentele/badge/?version=latest&style=flat)](https://opentele.readthedocs.io/)
 - Read documentation on [readthedocs](https://opentele.readthedocs.io/en/latest/documentation/telegram-desktop/tdesktop/)
 - Read documentation on [github](https://github.com/thedemons/opentele/tree/main/docs-github)
+
+Fork by SHADRIN
