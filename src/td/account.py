@@ -986,6 +986,7 @@ class Account(BaseObject):
         api: Union[Type[APIData], APIData] = API.TelegramDesktop,
         password: str = None,
         owner: td.TDesktop = None,
+        kwargs: dict = None
     ):
 
         Expects(
@@ -1009,7 +1010,7 @@ class Account(BaseObject):
                     ),
                 )
 
-            copy = await telethonClient.QRLoginToNewClient(api=api, password=password)
+            copy = await telethonClient.QRLoginToNewClient(api=api, password=password, **kwargs)
             await copy.get_me()
         else:
             copy = telethonClient
