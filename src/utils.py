@@ -197,9 +197,10 @@ class sharemethod(type):
 
     def __new__(cls: Type[_T], func: _F) -> Type[_F]:
 
-        clsName = func.__class__.__name__
-        bases = func.__class__.__bases__
-        attrs = func.__dict__
+        clsName = "function"
+        bases = (object,)
+        attrs = {}
+
         # attrs = dict(func.__class__.__dict__)
         result = super().__new__(cls, clsName, bases, attrs)
         result.__fget__ = func
