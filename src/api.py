@@ -538,7 +538,7 @@ class API(BaseObject):
         # api_hash = "3975f648bb682ee889f35483bc618d1c" | Telegram for macOS uses this api, but it"s unofficial api, why?
         device_model = "MacBook Pro"
         system_version = "macOS 12.0.1"
-        app_version = "8.4"
+        app_version = "10.3 (build 256373)"
         lang_code = "en"
         system_lang_code = "en-US"
         lang_pack = "macos"
