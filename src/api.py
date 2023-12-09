@@ -459,7 +459,7 @@ class API(BaseObject):
         api_hash = "eb06d4abfb49dc3eeb1aeb98ae0f581e"
         device_model = "Samsung SM-G998B"
         system_version = "SDK 31"
-        app_version = "10.1.1"
+        app_version = "10.3.2 (4145)"
         lang_code = "en"
         system_lang_code = "en-US"
         lang_pack = "android"
