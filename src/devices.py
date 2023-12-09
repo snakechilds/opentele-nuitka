@@ -1082,6 +1082,42 @@ class macOSDevice(GeneralDesktopDevice):
         "macOS 12.0",
         "macOS 12.0.1",
         "macOS 12.1",
+        "macOS 12.2",
+        "macOS 12.2.1",
+        "macOS 12.3",
+        "macOS 12.3.1",
+        "macOS 12.4",
+        "macOS 12.5",
+        "macOS 12.5.1",
+        "macOS 12.6",
+        "macOS 12.6.1",
+        "macOS 12.6.2",
+        "macOS 12.6.3",
+        "macOS 12.6.4",
+        "macOS 12.6.5",
+        "macOS 12.6.6",
+        "macOS 12.6.7",
+        "macOS 12.6.8",
+        "macOS 12.6.9",
+        "macOS 12.7",
+        "macOS 12.7.1",
+        "macOS 14.1",
+        "macOS 14.1.1",
+        "macOS 14.1.2",
+        "macOS 13.0",
+        "macOS 13.0.1",
+        "macOS 13.1",
+        "macOS 13.2",
+        "macOS 13.2.1",
+        "macOS 13.3",
+        "macOS 13.3.1",
+        "macOS 13.4",
+        "macOS 13.5",
+        "macOS 13.5.1",
+        "macOS 13.5.2",
+        "macOS 13.6",
+        "macOS 13.6.1",
+        "macOS 13.6.2",
     ]
 
     deviceList: List[DeviceInfo] = []
@@ -6017,6 +6053,8 @@ class AndroidDevice(SystemInfo):
         "SDK 29",
         "SDK 30",
         "SDK 31",
+        "SDK 32",
+        "SDK 33",
     ]
 
     deviceList: List[DeviceInfo] = []
@@ -6046,10 +6084,36 @@ class iOSDeivce(SystemInfo):
         11: ["", " Pro", " Pro Max"],
         12: [" mini", "", " Pro", " Pro Max"],
         13: [" Pro", " Pro Max", " Mini", ""],
+        14: [" Pro", " Plus", " Pro Max", ""],
+        15: [" Pro", " Plus", " Pro Max", ""],
     }
 
     system_versions: Dict[int, Dict[int, List[int]]] = {
-        15: {2: [], 1: [1], 0: [2, 1]},
+		17: {
+			1: [2, 1],  # iOS 17.1.2 dan 17.1.1
+			0: [3, 2, 1],  # iOS 17.0.3, 17.0.2, dan 17.0.1
+		},
+		16: {
+			7: [2, 1],  # iOS 16.7.2 dan 16.7.1
+			6: [1],     # iOS 16.6.1
+			5: [1],     # iOS 16.5.1
+			4: [1],     # iOS 16.4.1
+			3: [1],     # iOS 16.3.1
+			2: [2, 1],  # iOS 16.2.2 dan 16.2.1
+			1: [3, 2, 1],  # iOS 16.1.3, 16.1.2, dan 16.1.1
+			0: [3, 2, 1],  # iOS 16.0.3, 16.0.2, dan 16.0.1
+		},
+		15: {
+			8: [0],
+            7: [9, 8, 7, 6, 5, 4, 3, 2, 1],  # iOS 15.7.4, 15.7.3, 15.7.2, dan 15.7.1
+			6: [1],           # iOS 15.6.1
+			5: [],            # iOS 15.5
+			4: [1],           # iOS 15.4.1
+			3: [1],           # iOS 15.3.1
+			2: [1],           # iOS 15.2.1
+			1: [1],           # iOS 15.1.1
+			0: [2, 1]         # iOS 15.0.2 dan 15.0.1
+		},
         14: {8: [1], 7: [1], 6: [], 5: [1], 4: [2, 1], 3: [], 2: [1], 1: [], 0: [1]},
         13: {7: [], 6: [1], 5: [1], 4: [1], 3: [1], 2: [3, 2], 1: [3, 2, 1]},
         12: {
@@ -6073,8 +6137,12 @@ class iOSDeivce(SystemInfo):
 
             # ! SHITTY CODE BECAUSE I HAD TO CHECK FOR THE RIGHT VERSION
             for id_model in cls.device_models:
-                if id_model == 13:
-                    available_versions = [15]
+				if id_model == 15:
+					available_versions = [17]  # Asumsi bahwa iPhone 15 kompatibel dengan iOS 15 dan 16
+				elif id_model == 14:
+					available_versions = [16, 17]  # Asumsi bahwa iPhone 14 kompatibel dengan iOS 14, 15, dan 16
+                elif id_model == 13:
+                    available_versions = [15, 16]
                 elif id_model == 12:
                     available_versions = [14, 15]
                 elif id_model == 11:
