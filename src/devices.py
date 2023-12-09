@@ -6137,10 +6137,10 @@ class iOSDeivce(SystemInfo):
 
             # ! SHITTY CODE BECAUSE I HAD TO CHECK FOR THE RIGHT VERSION
             for id_model in cls.device_models:
-				if id_model == 15:
-					available_versions = [17]  # Asumsi bahwa iPhone 15 kompatibel dengan iOS 15 dan 16
-				elif id_model == 14:
-					available_versions = [16, 17]  # Asumsi bahwa iPhone 14 kompatibel dengan iOS 14, 15, dan 16
+		if id_model == 15:
+		    available_versions = [17]  # Asumsi bahwa iPhone 15 kompatibel dengan iOS 15 dan 16
+		elif id_model == 14:
+		    available_versions = [16, 17]  # Asumsi bahwa iPhone 14 kompatibel dengan iOS 14, 15, dan 16
                 elif id_model == 13:
                     available_versions = [15, 16]
                 elif id_model == 12:
